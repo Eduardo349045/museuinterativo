@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js" defer></script>
+    <title>Museu Virtual Interativo: História Antiga</title>
+</head>
+<body>
+    <header class="text-center p-4 bg-dark text-white">
+        <h1>Museu Virtual Interativo: História Antiga</h1>
+    </header>
+    <main class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4" onclick="showPopup('item1')">
+                    <img src="img/piramides.jpg" class="card-img-top" alt="Pirâmides do Egito">
+                    <div class="card-body">
+                        <h5 class="card-title">Pirâmides do Egito</h5>
+                        <p class="card-text">A Pirâmide de Gizé, construída entre 2580 e 2560 a.C. para o faraó Quéops, é a maior das três pirâmides de Gizé e a única das Sete Maravilhas do Mundo Antigo que ainda existe. Com uma altura original de 146 metros, ela foi projetada como tumba para garantir a ascensão do faraó ao além. Sua construção envolveu milhares de trabalhadores e o uso de mais de 2 milhões de blocos de pedra. Apesar dos danos ao longo dos séculos, a pirâmide continua a ser um símbolo icônico da antiga civilização egípcia e atrai milhões de visitantes anualmente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4" onclick="showPopup('item2')">
+                    <img src="img/coliseuderoma.jpg" class="card-img-top" alt="Coliseu de Roma">
+                    <div class="card-body">
+                        <h5 class="card-title">Coliseu de Roma</h5>
+                        <p class="card-text">O Coliseu de Roma, também conhecido como Anfiteatro Flaviano, foi inaugurado em 80 d.C. durante o reinado do imperador Tito e é um dos maiores símbolos da arquitetura romana. Com capacidade para 50.000 a 80.000 espectadores, serviu como palco para lutas de gladiadores, batalhas navais e diversos espetáculos públicos. Sua construção, que começou sob Vespasiano em 70 d.C., utilizou uma impressionante técnica de engenharia, combinando concreto e pedra. Ao longo dos séculos, o Coliseu sofreu danos devido a terremotos e ao desgaste natural, mas ainda permanece como um ícone da Roma Antiga e é um Patrimônio Mundial da UNESCO, atraindo milhões de turistas anualmente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4" onclick="showPopup('item3')">
+                    <img src="img/guerradetroia.jpg" class="card-img-top" alt="Grande Muralha da China">
+                    <div class="card-body">
+                        <h5 class="card-title">Guerra de Troia</h5>
+                        <p class="card-text">A Guerra de Troia, um conflito lendário da Grécia Antiga, ocorreu por volta do século XII a.C. e é narrada principalmente na "Ilíada" de Homero. A guerra começou após o rapto de Helena, esposa do rei espartano Menelau, pelo príncipe troiano Páris. Os gregos, liderados por Agamêmnon, sitiaram Troia por dez anos, até que utilizaram o famoso Cavalo de Troia para enganar os defensores e conquistar a cidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4" onclick="showPopup('item4')">
+                    <img src="img/cristoredentor.jpg" class="card-img-top" alt="Coliseu de Roma">
+                    <div class="card-body">
+                        <h5 class="card-title">Cristo Redentor</h5>
+                        <p class="card-text">O Cristo Redentor, localizado no Rio de Janeiro, Brasil, é uma imponente estátua de Jesus Cristo que se ergue a 700 metros de altura no Corcovado. Sua construção começou em 1922 e foi inaugurada em 12 de outubro de 1931. Projetada pelo engenheiro Heitor da Silva Costa e esculpida por Paul Landowski, a estátua possui 30 metros de altura e simboliza a paz e a acolhida. Desde então, tornou-se um ícone do Rio de Janeiro e do Brasil, atraindo milhões de turistas e sendo reconhecida como Patrimônio Mundial da UNESCO. Em 2007, foi escolhida como uma das Novas Sete Maravilhas do Mundo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4" onclick="showPopup('item5')">
+                    <img src="img/muralhadachina.jpg" class="card-img-top" alt="Coliseu de Roma">
+                    <div class="card-body">
+                        <h5 class="card-title">Muralha da China</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" onclick="showQuiz()">Teste seu conhecimento</button>
+        <button class="btn btn-secondary" onclick="showExitPopup()">Sair</button>
+    </main>
+
+    <!-- Pop-ups -->
+    <div class="modal fade" id="popup" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Curiosidade</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="popupContent"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="quizPopup" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Quiz Interativo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Qual era a função principal das pirâmides do Egito?</p> 
+                    <input type="text" class="form-control" id="quizAnswer">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="checkAnswer()">Enviar</button>
+                </div>
+                <div id="quizFeedback" class="text-center mt-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exitPopup" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Obrigado por visitar!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Esperamos que você tenha gostado. Confira nossas outras exposições!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
