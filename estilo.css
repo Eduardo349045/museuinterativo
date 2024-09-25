@@ -1,0 +1,71 @@
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333; /*cor do titulo*/
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    border: 1px solid gray; /*mudar a cor do fundo*/
+    border-radius: 8px;
+    background-color: black;
+}
+
+
+.card-img-top {
+    height: 200px; 
+}
+
+.card-body {
+    padding: 25px; /*ficar llonge da borda*/
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: yellow; /*cor titulo dentro do cartao*/
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: white; 
+}
+
+
+
+/*comandos dentro do popup, quando a pessoa clica na imagem e aparece as curiosidades*/
+
+/*left e top para centralizar a curiosidede na tela*/
+
+.popup {
+    display: none; /*esconder sobre a curiosidade quando clica na imagem*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*ajuda a centralizar o que esta escretio dentro do popup, primeiro numero centraliza para a esquerda eo segunda para cima*/
+    background-color: white; /*cor de fundo para os popup*/
+    border: 1px solid black; /*borda preta*/
+    padding: 20px; /*ficar longe da borda*/
+    width: 300px; /*tamanho do quadrado*/
+    border-radius: 8px; /*arredondar borda*/
+}
+
+
+.popup button {
+    background-color: #007bff; /*cor du butao*/
+    color: white; /*cor dentro du butao*/
+    border: none; 
+    padding: 10px 15px; /*preecnher o botao, deixando ele grande*/
+    border-radius: 5px;
+}
+
+
+
+
+
+
